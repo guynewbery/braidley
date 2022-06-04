@@ -9,7 +9,14 @@ LINK_DIRECTORIES(
    C:/vcpkg/installed/x64-windows/lib
 ) 
 
-add_executable(braidley main.cpp)
+add_executable(braidley 
+    main.cpp
+    Core.cpp
+    Game.cpp
+    Phase.cpp
+    PhaseStateMachine.cpp
+    MenuPhase.cpp
+)
 
 TARGET_LINK_LIBRARIES(braidley
     raylib
