@@ -1,5 +1,6 @@
 #include "Game.h"
 
+#include "Network.h"
 #include "PhaseStateMachine.h"
 
 static int constexpr screenWidth = 800;
@@ -14,6 +15,8 @@ static Game * theGame;
 
 void BeginGame()
 {
+    InitializeSockets();
+
     theGame = new Game();
     assert(theGame);
 
@@ -31,6 +34,13 @@ void EndGame()
 void UpdateGame()
 {
     theGame->phaseStateMachine.UpdatePhaseStateMachine();
+
+    if (IsKeyPressed(KEY_A))
+    {
+		TestConnection();
+	}
+
+    
 }
 
 void DrawGame()

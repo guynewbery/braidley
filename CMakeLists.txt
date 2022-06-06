@@ -16,6 +16,7 @@ add_executable(braidley
     Phase.cpp
     PhaseStateMachine.cpp
     MenuPhase.cpp
+    Network.cpp
 )
 
 TARGET_LINK_LIBRARIES(braidley
